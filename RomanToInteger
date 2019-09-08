@@ -1,0 +1,61 @@
+class Solution:
+    def romanToInt(self, str):
+       total = 0
+       for i in range(0,len(str)):
+          if i+1 >= len(str):
+              if str[i] == 'M':
+                  total+=1000
+              if str[i] == 'D':
+                  total+=500
+              if str[i] == 'C':
+                  total+=100
+              if str[i] == 'L':
+                  total+=50
+              if str[i] == 'X':
+                  total+=10
+              if str[i] == 'V':
+                  total+=5
+              if str[i] == 'I':
+                  total+=1
+          else:
+              if (str[i]=="I" and str[i+1]=="V") or (str[i]=="I" and str[i+1]=="X") or (str[i]=="X" and str[i+1]=="L") or (str[i]=="X" and str[i+1]=="C") or (str[i]=="C" and str[i+1]=="D") or (str[i]=="C" and str[i+1]=="M") :
+                     if str[i] == 'D':
+                            total-=500
+                     if str[i] == 'C':
+                            total-=100
+                     if str[i] == 'L':
+                            total-=50
+                     if str[i] == 'X':
+                            total-=10
+                     if str[i] == 'V':
+                            total-=5
+                     if str[i] == 'I':
+                            total-=1
+                     
+              else:
+                     if str[i] == 'M':
+                            total+=1000
+                     if str[i] == 'D':
+                            total+=500
+                     if str[i] == 'C':
+                            total+=100
+                     if str[i] == 'L':
+                            total+=50
+                     if str[i] == 'X':
+                            total+=10
+                     if str[i] == 'V':
+                            total+=5
+                     if str[i] == 'I':
+                            total+=1
+                                   
+
+       return total
+
+
+
+s = Solution()
+print(s.romanToInt('III'))
+print(s.romanToInt('IX'))
+print(s.romanToInt('LVIII'))
+print(s.romanToInt('MCMXCIV'))
+
