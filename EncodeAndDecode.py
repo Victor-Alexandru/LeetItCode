@@ -11,7 +11,6 @@ class Codec:
         path = parseaza.urlparse(longUrl).path
         hostname =parseaza.urlparse(longUrl).hostname
         tiny_url = 'http://tinyurl.com/'
-        print(path)
         path = path[1:]
         for character in path:
                if character == '/':
@@ -21,8 +20,8 @@ class Codec:
                              tiny_url+=character.upper()
                       else:
                              tiny_url+=character
-
-        pass
+        print(tiny_url)
+        return tiny_url     
         
 
     def decode(self, shortUrl):
@@ -31,7 +30,7 @@ class Codec:
         :type shortUrl: str
         :rtype: str
         """
-        pass
+        
         
 
 # Your Codec object will be instantiated and called as such:
